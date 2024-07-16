@@ -27,5 +27,20 @@ EMAIL_PORT = your_smtp_port
 EMAIL_USE_TLS = True # or False, depending on your email provider
 EMAIL_HOST_USER = 'your_email@example.com'
 EMAIL_HOST_PASSWORD = 'your_email_password'
-
 ```
+
+## Usaage
+1.Run the server from terminal
+```
+python manage.py runserver
+```
+2.Open the application:
+Open your web browser and navigate to http://127.0.0.1:8000/.
+
+Compose and send an email:
+
+. Enter the recipient's email address.
+. Enter the subject of the email.
+. Write your message in the provided textarea.
+. Attach a file if needed by using the file input.
+. Click the "Send Email" button to send the email.
