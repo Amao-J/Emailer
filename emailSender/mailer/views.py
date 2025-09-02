@@ -1,4 +1,3 @@
-
 from django.shortcuts import render
 from django.core.mail import EmailMessage
 from .forms import EmailForm
@@ -12,13 +11,13 @@ def send_email(request):
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
             attachment = request.FILES.get('attachment')
-
             email = EmailMessage(
                 subject,
                 message,
-                settings.DEFAULT_FROM_EMAIL,
-                [recipient.strip() for recipient in recipients],
-            )
+                settings.EMAIL_HOST_USER,  # From
+                [],                        # To is empty
+                bcc=recipients,            # Hide recipients here
+)
 
             if attachment:
                 email.attach(attachment.name, attachment.read(), attachment.content_type)
