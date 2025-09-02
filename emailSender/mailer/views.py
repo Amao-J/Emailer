@@ -14,9 +14,9 @@ def send_email(request):
             email = EmailMessage(
                 subject,
                 message,
-                settings.EMAIL_HOST_USER,  # From
-                [],                        # To is empty
-                bcc=recipients,            # Hide recipients here
+                settings.EMAIL_HOST_USER,  
+                [],                        
+                bcc=recipients,            
 )
 
             if attachment:
@@ -32,3 +32,4 @@ def send_email(request):
         form = EmailForm()
 
     return render(request, 'Sender/send_email.html', {'form': form})
+
